@@ -36,6 +36,7 @@ images.forEach(image => {
   const imgElem = document.createElement('img');
   imgElem.src = image.url;
   imgElem.alt = image.alt;
+  imgElem.classList.add('gallery-image');
 
   liElem.append(imgElem);
 });
