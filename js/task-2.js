@@ -27,16 +27,17 @@ const images = [
 
 const ulElem = document.querySelector('.gallery');
 
-images.forEach(image => {
+const imagesArr = images.map(({ url, alt }) => {
   const liElem = document.createElement('li');
   liElem.classList.add('gallery-item');
 
-  ulElem.append(liElem);
-
   const imgElem = document.createElement('img');
-  imgElem.src = image.url;
-  imgElem.alt = image.alt;
+  imgElem.src = url;
+  imgElem.alt = alt;
   imgElem.classList.add('gallery-image');
-
   liElem.append(imgElem);
+
+  return liElem;
 });
+
+ulElem.append(...imagesArr);
